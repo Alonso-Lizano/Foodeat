@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Foodeat</string>
+
+    <string name="api_key">1d9e1fd7861b4bdea9b4a127015f211d</string>
+
+    <string name="open">Open Drawer Menu</string>
+    <string name="close">Close Drawer Menu</string>
+
+    <string name="ready_in_minutes">%d min</string>
+
+    <string-array name="type">
+        <item>Main Course</item>
+        <item>Side Dish</item>
+        <item>Dessert</item>
+        <item>Appetizer</item>
+        <item>Salad</item>
+        <item>Bread</item>
+        <item>Breakfast</item>
+        <item>Soup</item>
+        <item>Beverage</item>
+        <item>Sauce</item>
+        <item>Marinade</item>
+        <item>Fingerfood</item>
+        <item>Snack</item>
+        <item>Drink</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

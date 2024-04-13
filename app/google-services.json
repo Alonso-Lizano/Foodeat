@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "374690950381",
+    "project_id": "ren-s-healthy-food",
+    "storage_bucket": "ren-s-healthy-food.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374690950381:android:9122fddce635c056c8b0e4",
+        "android_client_info": {
+          "package_name": "com.ren.renshomemadefood"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDDCqBoynwepWpxFQ2gbVuLS8Dgt_WrhE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

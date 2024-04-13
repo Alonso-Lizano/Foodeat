@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green_light">#C1FBA4</color>
+    <color name="light_grey">#CED4DA</color>
+    <color name="green_water">#7FD1B9</color>
+    <color name="pale_orange">#FFC09F</color>
+    <color name="rose">#FFB3C1</color>
+    <color name="beige_rose">#F9DBBD</color>
+    <color name="beige_rose_transparent">#80F9DBBD</color>
+    <color name="recipe_color">#F6F6F6</color>
+    <color name="spinner_dark_color">#6C757C</color>
+</resources>

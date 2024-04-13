@@ -1,0 +1,67 @@
+<!-- item_layout.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnFavorites"
+            style="@style/btnStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:text="Favorites"
+            app:backgroundTint="@null" />
+
+        <Button
+            android:id="@+id/btnOrders"
+            style="@style/btnStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:text="Orders"
+            app:backgroundTint="@null" />
+
+        <Button
+            android:id="@+id/btnSubscribe"
+            style="@style/btnStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:text="Subscribe"
+            app:backgroundTint="@null" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnRecipesOne"
+        style="@style/btnStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Recipes one"
+        android:textAllCaps="false"
+        app:backgroundTint="@null" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@color/light_grey" />
+
+
+</LinearLayout>

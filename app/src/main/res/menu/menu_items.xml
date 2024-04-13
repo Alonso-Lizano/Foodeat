@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/navHome"
+        android:icon="@drawable/home_icon"
+        android:title="Home" />
+
+    <group android:id="@+id/group_logged_out">
+        <item
+            android:id="@+id/navLogin"
+            android:icon="@drawable/login_icon"
+            android:title="Login" />
+    </group>
+
+    <item android:title="Account">
+        <menu>
+            <group
+                android:id="@+id/group_logged_in"
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/navProfile"
+                    android:icon="@drawable/person_icon"
+                    android:title="Profile" />
+
+                <item
+                    android:id="@+id/navCommunity"
+                    android:icon="@drawable/chat_icon"
+                    android:title="Community" />
+
+                <item
+                    android:id="@+id/navFavorite"
+                    android:icon="@drawable/favorite_select_icon"
+                    android:title="Favorite" />
+
+                <item
+                    android:id="@+id/navSettings"
+                    android:icon="@drawable/settings_icon"
+                    android:title="Settings" />
+
+                <item
+                    android:id="@+id/navLogout"
+                    android:icon="@drawable/logout_icon"
+                    android:title="Logout" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Communication">
+        <menu>
+            <group
+                android:id="@+id/group_comm_logged_in"
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/navRate"
+                    android:icon="@drawable/rate_icon"
+                    android:title="Rate" />
+
+                <item
+                    android:id="@+id/navShare"
+                    android:icon="@drawable/share_icon"
+                    android:title="Share" />
+            </group>
+        </menu>
+    </item>
+
+</menu>

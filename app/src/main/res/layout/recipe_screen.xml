@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".content.screens.components.RecipeScreen"
+    app:layoutDescription="@xml/recipe_screen_scene">
+
+    <ImageView
+        android:id="@+id/imgRecipe"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:hapticFeedbackEnabled="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/shade"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:src="@drawable/recipe_overlay"
+        app:layout_constraintBottom_toBottomOf="@id/imgRecipe"
+        app:layout_constraintEnd_toEndOf="@id/imgRecipe"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/imgRecipe" />
+
+    <ImageView
+        android:id="@+id/backRecipe"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/card_back"
+        android:clickable="true"
+        android:focusable="true"
+        android:foregroundGravity="center"
+        android:padding="4dp"
+        android:src="@drawable/back_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imgRecipe" />
+
+    <ImageView
+        android:id="@+id/fullScreenBtn"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="20dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foregroundGravity="center"
+        android:hapticFeedbackEnabled="true"
+        android:padding="4dp"
+        android:src="@drawable/full_size_icon"
+        app:layout_constraintBottom_toBottomOf="@id/backRecipe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/backRecipe" />
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="-10dp"
+        android:background="@drawable/card_recipe"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgRecipe">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="45dp"
+            android:text="Lomo Saltado"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/imgCook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="7dp"
+            android:src="@drawable/time_icon" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_below="@id/title"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/imgCook"
+            android:gravity="center_vertical"
+            android:text="30 min" />
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/time"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/ingredients"
+                android:layout_width="0dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="Ingredients" />
+
+            <Button
+                android:id="@+id/steps"
+                android:layout_width="0dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="Steps" />
+
+            <Button
+                android:id="@+id/nutritional"
+                android:layout_width="0dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="24dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="Nutritional" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ingData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll"
+            android:layout_alignParentStart="true"
+            android:padding="10dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/stepsData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll"
+            android:padding="10dp"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/up_arrow"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/arrow_up_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/rl" />
+
+    <ImageView
+        android:id="@+id/favoriteBtn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/favorite_unselect_icon"
+        app:layout_constraintBottom_toTopOf="@id/rl"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"/>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    style="@style/screenBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".content.screens.MainScreen">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        style="@style/NavigationViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/menu_items"
+        app:itemBackground="@drawable/menu_item_bg_color"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                style="@style/appToolbar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navigationIcon="@drawable/menu_icon"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+            <ImageView
+                android:id="@+id/foodBG"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="Food Background"
+                android:rotation="10"
+                android:src="@drawable/salad_trans"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+            <TextView
+                android:id="@+id/textHello"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/poppins"
+                android:text="Hello"
+                android:textSize="28sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Foodie!"
+                android:textSize="28sp"
+                app:layout_constraintStart_toEndOf="@+id/textHello"
+                app:layout_constraintTop_toTopOf="@id/textHello" />
+
+            <TextView
+                android:id="@+id/idMsg"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Which food would you like to cook?"
+                android:textSize="17sp"
+                app:layout_constraintStart_toStartOf="@+id/textHello"
+                app:layout_constraintTop_toBottomOf="@id/textHello" />
+
+
+            <EditText
+                android:id="@+id/searchViewFrame"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/searchview"
+                android:ems="10"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Search Recipe"
+                android:inputType="none"
+                android:paddingStart="47dp"
+                android:textColorHint="#5A5858"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/textHello"
+                app:layout_constraintTop_toBottomOf="@id/idMsg" />
+
+            <ImageView
+                android:id="@+id/searchIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="25dp"
+                android:padding="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/idMsg"
+                app:srcCompat="@drawable/search_icon" />
+
+            <TextView
+                android:id="@+id/tvCategories"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Categories"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@id/textHello"
+                app:layout_constraintTop_toBottomOf="@id/searchViewFrame" />
+
+            <HorizontalScrollView
+                android:id="@+id/hsv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvCategories">
+
+                <RelativeLayout
+                    android:id="@+id/relative"
+                    android:layout_width="wrap_content"
+                    android:layout_height="140dp"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <ImageButton
+                        android:id="@+id/mainCourse"
+                        style="@style/category_style"
+                        android:background="@drawable/card_category"
+                        android:contentDescription="Main Course"
+                        android:src="@drawable/main_course" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/mainCourse"
+                        android:layout_alignStart="@+id/mainCourse"
+                        android:layout_alignEnd="@+id/mainCourse"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="-23dp"
+                        android:text="Main Course"
+                        android:textAlignment="center"
+                        android:textSize="15sp" />
+
+                    <ImageButton
+                        android:id="@+id/sideDishBtn"
+                        style="@style/category_style"
+                        android:layout_marginStart="17dp"
+                        android:layout_toEndOf="@id/mainCourse"
+                        android:background="@drawable/card_category"
+                        android:contentDescription="Pizza"
+                        android:src="@drawable/side_dish" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/sideDishBtn"
+                        android:layout_alignStart="@+id/sideDishBtn"
+                        android:layout_alignEnd="@+id/sideDishBtn"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="-23dp"
+                        android:text="Side Dish"
+                        android:textAlignment="center"
+                        android:textSize="15sp" />
+
+                    <ImageButton
+                        android:id="@+id/dessert"
+                        style="@style/category_style"
+                        android:layout_marginStart="17dp"
+                        android:layout_toEndOf="@id/sideDishBtn"
+                        android:background="@drawable/card_category"
+                        android:contentDescription="Pizza"
+                        android:src="@drawable/dessert" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/dessert"
+                        android:layout_alignStart="@+id/dessert"
+                        android:layout_alignEnd="@+id/dessert"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="-23dp"
+                        android:text="Dessert"
+                        android:textAlignment="center"
+                        android:textSize="15sp" />
+
+                    <ImageButton
+                        android:id="@+id/appetizer"
+                        style="@style/category_style"
+                        android:layout_marginStart="17dp"
+                        android:layout_toEndOf="@id/dessert"
+                        android:background="@drawable/card_category"
+                        android:contentDescription="Pizza"
+                        android:src="@drawable/appetizer" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/appetizer"
+                        android:layout_alignStart="@+id/appetizer"
+                        android:layout_alignEnd="@+id/appetizer"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="-23dp"
+                        android:text="Appetizer"
+                        android:textAlignment="center"
+                        android:textSize="15sp" />
+
+                    <ImageButton
+                        android:id="@+id/salad"
+                        style="@style/category_style"
+                        android:layout_marginStart="17dp"
+                        android:layout_toEndOf="@id/appetizer"
+                        android:background="@drawable/card_category"
+                        android:contentDescription="Pizza"
+                        android:src="@drawable/salad" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/salad"
+                        android:layout_alignStart="@+id/salad"
+                        android:layout_alignEnd="@+id/salad"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="-23dp"
+                        android:text="Salad"
+                        android:textAlignment="center"
+                        android:textSize="15sp" />
+
+                    <ImageButton
+                        android:id="@+id/bread"
+                        style="@style/category_style"
+                        android:layout_marginStart="17dp"
+                        android:layout_toEndOf="@id/salad"
+                        android:background="@drawable/card_category"
+                        android:contentDescription="Pizza"
+                        android:src="@drawable/bread" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/bread"
+                        android:layout_alignStart="@+id/bread"
+                        android:layout_alignEnd="@+id/bread"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="-23dp"
+                        android:text="Bread"
+                        android:textAlignment="center"
+                        android:textSize="15sp" />
+
+                    <ImageButton
+                        android:id="@+id/breakfast"
+                        style="@style/category_style"
+                        android:layout_marginStart="17dp"
+                        android:layout_toEndOf="@id/bread"
+                        android:background="@drawable/card_category"
+                        android:contentDescription="Pizza"
+                        android:src="@drawable/breakfast" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/breakfast"
+                        android:layout_alignStart="@+id/breakfast"
+                        android:layout_alignEnd="@+id/breakfast"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="-23dp"
+                        android:text="Breakfast"
+                        android:textAlignment="center"
+                        android:textSize="15sp" />
+
+                    <ImageButton
+                        android:id="@+id/soup"
+                        style="@style/category_style"
+                        android:layout_marginStart="17dp"
+                        android:layout_toEndOf="@id/breakfast"
+                        android:background="@drawable/card_category"
+                        android:contentDescription="Pizza"
+                        android:src="@drawable/soup" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/soup"
+                        android:layout_alignStart="@+id/soup"
+                        android:layout_alignEnd="@+id/soup"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="-23dp"
+                        android:text="Soup"
+                        android:textAlignment="center"
+                        android:textSize="15sp" />
+
+                    <ImageButton
+                        android:id="@+id/beverage"
+                        style="@style/category_style"
+                        android:layout_marginStart="17dp"
+                        android:layout_toEndOf="@id/soup"
+                        android:background="@drawable/card_category"
+                        android:contentDescription="Pizza"
+                        android:src="@drawable/beverage" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/beverage"
+                        android:layout_alignStart="@+id/beverage"
+                        android:layout_alignEnd="@+id/beverage"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="-23dp"
+                        android:text="Beverage"
+                        android:textAlignment="center"
+                        android:textSize="15sp" />
+
+                    <ImageButton
+                        android:id="@+id/sauce"
+                        style="@style/category_style"
+                        android:layout_marginStart="17dp"
+                        android:layout_toEndOf="@id/beverage"
+                        android:background="@drawable/card_category"
+                        android:contentDescription="Pizza"
+                        android:src="@drawable/sauce" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/sauce"
+                        android:layout_alignStart="@+id/sauce"
+                        android:layout_alignEnd="@+id/sauce"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="-23dp"
+                        android:text="Sauce"
+                        android:textAlignment="center"
+                        android:textSize="15sp" />
+
+                    <ImageButton
+                        android:id="@+id/marinade"
+                        style="@style/category_style"
+                        android:layout_marginStart="17dp"
+                        android:layout_toEndOf="@id/sauce"
+                        android:background="@drawable/card_category"
+                        android:contentDescription="Pizza"
+                        android:src="@drawable/marinade" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/marinade"
+                        android:layout_alignStart="@+id/marinade"
+                        android:layout_alignEnd="@+id/marinade"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="-23dp"
+                        android:text="Marinade"
+                        android:textAlignment="center"
+                        android:textSize="15sp" />
+
+                    <ImageButton
+                        android:id="@+id/fingerfood"
+                        style="@style/category_style"
+                        android:layout_marginStart="17dp"
+                        android:layout_toEndOf="@id/marinade"
+                        android:background="@drawable/card_category"
+                        android:contentDescription="Pizza"
+                        android:src="@drawable/fingerfood" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/fingerfood"
+                        android:layout_alignStart="@+id/fingerfood"
+                        android:layout_alignEnd="@+id/fingerfood"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="-23dp"
+                        android:text="Fingerfood"
+                        android:textAlignment="center"
+                        android:textSize="15sp" />
+
+                    <ImageButton
+                        android:id="@+id/snack"
+                        style="@style/category_style"
+                        android:layout_marginStart="17dp"
+                        android:layout_toEndOf="@id/fingerfood"
+                        android:background="@drawable/card_category"
+                        android:contentDescription="Pizza"
+                        android:src="@drawable/snack" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/snack"
+                        android:layout_alignStart="@+id/snack"
+                        android:layout_alignEnd="@+id/snack"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="-23dp"
+                        android:text="Snack"
+                        android:textAlignment="center"
+                        android:textSize="15sp" />
+
+                    <ImageButton
+                        android:id="@+id/drink"
+                        style="@style/category_style"
+                        android:layout_marginStart="17dp"
+                        android:layout_toEndOf="@id/snack"
+                        android:background="@drawable/card_category"
+                        android:contentDescription="Pizza"
+                        android:src="@drawable/drink" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/drink"
+                        android:layout_alignStart="@+id/drink"
+                        android:layout_alignEnd="@+id/drink"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="-23dp"
+                        android:text="Drink"
+                        android:textAlignment="center"
+                        android:textSize="15sp" />
+
+                </RelativeLayout>
+
+
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/popularRecipes"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Popular Recipes"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/textHello"
+                app:layout_constraintTop_toBottomOf="@id/hsv" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/popularRecipes"
+                tools:listitem="@layout/popular_recipes" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.drawerlayout.widget.DrawerLayout>
